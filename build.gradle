@@ -34,3 +34,24 @@ dependencies {
     implementation "com.squareup.okhttp3:okhttp:4.9.1"
     testImplementation "io.kotlintest:kotlintest-runner-junit5:3.4.2"
 }
+
+plugins {
+    id("maven-publish")
+}
+publishing {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/bleakwizz/openai-models-jdk")
+            credentials {
+                username = project.findProperty("gpr.user") ?: System.getenv("USERNAME")
+                password = project.findProperty("gpr.key") ?: System.getenv("TOKEN")
+            }
+        }
+    }
+    publications {
+        gpr(MavenPublication) {
+            from(components.java)
+        }
+    }
+}
