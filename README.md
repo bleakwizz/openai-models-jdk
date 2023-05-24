@@ -1,4 +1,4 @@
-# org.openapitools.client - Kotlin client library for OpenAI API
+Kotlin / JDK client library for OpenAI API
 
 ## Requires
 

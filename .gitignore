@@ -6,3 +6,4 @@
 /build/
 .openapi-generator-ignore
 /.gradle/
+/.vscode/
